@@ -12,12 +12,12 @@ const ListadoPacientes = ({pacientes}) => {
 
 
       <div className="md:h-screen md:overflow-y-scroll">
-      { pacientes.map((paciente, index) => (
-        <Paciente 
-          key={index}
-          paciente={paciente}
-        />        
-      ))}
+        { pacientes.map((paciente) => (
+          <Paciente 
+            key={paciente.id}
+            paciente={paciente}
+          />        
+        ))}
       </div>
 
     </div>
