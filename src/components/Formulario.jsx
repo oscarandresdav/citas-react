@@ -2,7 +2,11 @@ import { useState } from "react"
 
 const Formulario = () => {
 
-  const [nombre, setNombre] = useState('');
+  const [mascota, setMascota] = useState('');
+  const [propietario, setPropietario] = useState('');
+  const [email, setEmail] = useState('');
+  const [fechaAlta, setFechaAlta] = useState('');
+  const [sintomas, setSintomas] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -10,7 +14,7 @@ const Formulario = () => {
   }
 
   return (
-    <div className="md:w-1/2 lg:w-2/5">
+    <div className="md:w-1/2 lg:w-2/5 mx-5">
       <h2 className="font-black text-3xl text-center">Seguimiento Pacientes</h2>
       <p className="text-lg text-center mt-5 mb-10">
         Añade Pacientes y {''}
@@ -27,8 +31,8 @@ const Formulario = () => {
                  id="mascota"
                  placeholder="Nombre de la Mascota"
                  className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                 value={nombre}
-                 onChange={(e) => setNombre(e.target.value)}/>
+                 value={mascota}
+                 onChange={(e) => setMascota(e.target.value)}/>
         </div>
 
         <div className="mb-5">
@@ -38,7 +42,9 @@ const Formulario = () => {
           <input type="text"
                  id="propietario"
                  placeholder="Nombre del Propietario"
-                 className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"/>
+                 className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                 value={propietario}
+                 onChange={(e) => setPropietario(e.target.value)}/>
         </div>
 
         <div className="mb-5">
@@ -48,7 +54,9 @@ const Formulario = () => {
           <input type="email"
                  id="email"
                  placeholder="correo@correo.com"
-                 className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"/>
+                 className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                 value={email}
+                 onChange={(e) => setEmail(e.target.value)}/>
         </div>
         <div className="mb-5">
           <label className="block text-gray-700 font-bold uppercase"
@@ -56,7 +64,9 @@ const Formulario = () => {
           </label>
           <input type="date"
                  id="alta"
-                 className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"/>
+                 className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                 value={fechaAlta}
+                 onChange={(e) => setFechaAlta(e.target.value)}/>
         </div>
         <div className="mb-5">
           <label className="block text-gray-700 font-bold uppercase"
@@ -64,7 +74,9 @@ const Formulario = () => {
           </label>
           <textarea id="sintomas"
                     className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                    placeholder="Describe los sintomas"/>
+                    placeholder="Describe los sintomas"
+                    value={sintomas}
+                    onChange={(e) => setSintomas(e.target.value)}/>
         </div>
 
         <input type="submit"
