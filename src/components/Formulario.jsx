@@ -12,7 +12,13 @@ const Formulario = ({pacientes, setPacientes, paciente}) => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    
+    if (Object.keys(paciente).length > 0) {
+      setMascota(paciente.mascota)
+      setPropietario(paciente.propietario)
+      setEmail(paciente.email)
+      setFechaAlta(paciente.fechaAlta)
+      setSintomas(paciente.sintomas)
+    }
   }, [paciente])
 
   const generarId = () => {
